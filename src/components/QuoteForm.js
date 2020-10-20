@@ -6,14 +6,22 @@ import { addQuote } from '../actions/quotes';
 class QuoteForm extends Component {
 
   state = {
+    id:'',
+    content:'',
+    author:''
     //set up a controlled form with internal state
   }
 
   handleOnChange = event => {
+    this.setState({
+            [event.target.name]: event.target.value
+        })
     // Handle Updating Component State
   }
 
   handleOnSubmit = event => {
+    event.preventdefault()
+
     // Handle Form Submit event default
     // Create quote object from state
     // Pass quote object to action creator
